@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       					   http://www.springframework.org/schema/beans/spring-beans.xsd
+       					   http://www.springframework.org/schema/aop
+       					   http://www.springframework.org/schema/aop/spring-aop.xsd
+                           http://www.springframework.org/schema/context
+       					   http://www.springframework.org/schema/context/spring-context.xsd
+">
+    <context:component-scan base-package="面向切面.spring全自动"/>
+    <!--&lt;!&ndash; 1 创建目标类 &ndash;&gt;-->
+    <!--<bean id="userServiceId" class="面向切面.spring全自动.UserServiceImpl"></bean>-->
+    <!--&lt;!&ndash; 2 创建切面类（通知） &ndash;&gt;-->
+    <!--<bean id="myAspectId" class="面向切面.spring全自动.Myaspect"></bean>-->
+
+    <!--aop编程-->
+    <!--1.导入命名空间-->
+    <aop:config proxy-target-class="true">
+        <!--从目标对象 上 获得 具体方法-->
+        <aop:pointcut id="myPointCut" expression="execution(* 面向切面.spring全自动.*.*(..))"/><!--3个* 分别是
+        返回类型任意 指定包下 类任意 方法任意 (..)指的是方法的参数任意 -->
+        <!--特殊的切面 只有一个通知和一个切入点-->
+        <aop:advisor advice-ref="MyaspectId" pointcut-ref="myPointCut"/>
+    </aop:config>
+
+    <!--..*  指的是 service包下 的所有类以及 service的子包下的所有的类 -->
+    <!--execution(* com.zzw.*.service..*)-->
+
+</beans>

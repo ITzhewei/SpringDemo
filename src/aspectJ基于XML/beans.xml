@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       					   http://www.springframework.org/schema/beans/spring-beans.xsd
+       					   http://www.springframework.org/schema/aop
+       					   http://www.springframework.org/schema/aop/spring-aop.xsd
+                           http://www.springframework.org/schema/context
+       					   http://www.springframework.org/schema/context/spring-context.xsd
+">
+    <context:component-scan base-package="aspectJ基于XML"/>
+
+    <!--aop编程 -->
+    <aop:config>
+        <aop:aspect ref="MyAspect1">
+            <aop:pointcut id="mypoint1" expression="execution(* aspectJ基于XML.*.*(..))"/>
+            <!--<aop:before method="myBefore" pointcut-ref="mypoint1"/>&lt;!&ndash;前置方法&ndash;&gt;-->
+            <!--<aop:after-returning method="myAfter" pointcut-ref="mypoint1" returning="o"/>&lt;!&ndash;后置方法&ndash;&gt;-->
+            <aop:around method="myaround" pointcut-ref="mypoint1"/><!--环绕方法-->
+        </aop:aspect>
+        <!--将切面类声明成为 切面 ,从而可以获得通知-->
+    </aop:config>
+
+
+</beans>
