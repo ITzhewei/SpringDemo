@@ -16,6 +16,9 @@
           <file>file://$MODULE_DIR$/src/面向切面/spring半自动代理/beans.xml</file>
           <file>file://$MODULE_DIR$/src/面向切面/spring全自动/beans.xml</file>
           <file>file://$MODULE_DIR$/src/aspectJ基于XML/beans.xml</file>
+          <file>file://$MODULE_DIR$/src/aspect基于注解/beans.xml</file>
+          <file>file://$MODULE_DIR$/src/jdbc/dbcp/beans.xml</file>
+          <file>file://$MODULE_DIR$/src/jdbc/c3p0/beans.xml</file>
         </fileset>
       </configuration>
     </facet>
@@ -32,5 +35,8 @@
     <orderEntry type="library" name="junit-4.9" level="project" />
     <orderEntry type="library" name="com.springsource.org.aspectj.weaver-1.6.8.RELEASE" level="project" />
     <orderEntry type="library" name="com.springsource.org.aspectj.weaver-1.6.8.RELEASE (2)" level="project" />
+    <orderEntry type="library" name="com.springsource.org.apache.commons.dbcp-1.2.2.osgi" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.28-bin" level="project" />
+    <orderEntry type="library" name="com.springsource.com.mchange.v2.c3p0-0.9.1.2" level="project" />
   </component>
 </module>
